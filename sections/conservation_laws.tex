@@ -1,0 +1,169 @@
+
+
+% ==============================================================================================
+\section{Finding the Conservation Laws}
+% ==============================================================================================
+
+\begin{frame}[t]\frametitle{A Different View of the Nonlocal/Nonlocal Formulation}
+Modifying our integral relations: \hfill\large\emA{$\boxed{\displaystyle q = \phi(x,\eta,t), ~Q = \phi(x,-h,t)}$}\normalsize \\~\\
+    \emA{\bf Integral Relation A}~\\~\\
+    $\displaystyle \sint{\dt\left(\varphi -  tq\normD{\varphi_z}\right)\: dx} = - t\sint{\dt\left(q\normD{\varphi_z}\right)\,dx} - \bint{Q\,\varphi_{zz}\:dx}$\\~\\~\\
+
+\emA{\bf Integral Relation B}~\\~\\
+    $\displaystyle{\sint{\dt q\left(\normD{\varphi_z}-2\varphi_{zz}\right)\:dx} =  \sint{g\eta (\varphi_{zz}+\eta_x\varphi_{xz})-2\eta_t\,q\,\varphi_{zzz}\:dx} + \bint{\frac{1}{2}Q_x^2\,\varphi_{zz}\:dx}}$
+\vfill
+\begin{overlayarea}{\linewidth}{.39\textheight}
+    \only<2>{
+        \begin{block}{Remark \#1}
+            Notice that (A) and (B) have a term in common.  This will be useful and will allow for a recursive process. 
+        \end{block}}
+        \only<3>{
+        \begin{block}{Remark \#2}
+            IBP introduced higher derivatives of $\varphi$.  If those eventually disappear, we may be able to find our conservation laws.  \emC{\bf Polynomials seem like a natural choice.}
+        \end{block}}
+    \end{overlayarea}
+    
+\end{frame}
+
+% ==============================================================================================
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Turning the Crank}
+    \emA{\bf Integral Relation A} 
+    \begin{displaymath}
+        \varphi = x + iz \quad \rightarrow\quad \sint{\dt\left(x + i\eta\right)\:dx} = 0.
+    \end{displaymath}
+    \pause
+    \emA{\bf Integral Relation B}   
+    $$\varphi = \frac{1}{2}(x+iz)^2 \rightarrow \dt\sint{q(1-i\eta_x)} = -\dt\sint{ tg\eta\:dx} = -\bint{\frac{1}{2}Q_x^2\:dx}.$$  \pause
+    \begin{block}{Real/Imaginary Parts}
+        \vspace*{-.2in}
+        \begin{eqnarray*}
+            \text{(T3)}\qquad &&\dt\sint{\eta\:dx} = 0\\ \pause
+            \text{(T4)}\qquad &&\dt\sint{q+ tg\eta\:dx} = -\bint{\frac{1}{2}Q_x^2\:dx}\\ \pause 
+            \text{(T1)}\qquad &&\dt\sint{-q \eta_x\:dx} = 0 \pause
+        \end{eqnarray*}
+    \end{block}
+\end{frame}
+% ==============================================================================================
+
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Turning the Crank}
+    \emA{\bf Integral Relation A}
+    \begin{eqnarray*}
+        \varphi = \frac{1}{2}(x + iz)^2 ~ &\rightarrow&~ \sint{\dt\frac{1}{2}\left(x + i\eta\right)^2 + t q (1 + i\eta_x)\:dx} \\ 
+        &&\qquad =t\emC{\underbrace{\dt\sint{ q(1-i\eta_x)\:dx}}_{*}}+2it\emB{\underbrace{\dt\sint{\eta_x q\:dx}}_{**}} + \bint{ Q\:dx}
+    \end{eqnarray*}
+    \pause
+    Note that we have already dealt with \emC{$(*)$} and \emB{$(**)$} and can back-substitute these relationships.%, we find
+    % $$\dt\sint{\frac{1}{2}\left(x + i\eta\right)^2 +\epsilon t q (1 + i\eta_x) + \epsilon\frac{t^2}{2}\eta\:dx} = \bint{\epsilon Q - t\frac{\epsilon}{2}Q_x^2\:dx}$$
+    \begin{block}{Real/Imaginary Parts}
+        \vspace*{-.2in}
+        \begin{eqnarray*}
+            \text{(T6)}\qquad &&\dt\sint{-\frac{1}{2}\eta^2 + \epsilon t q + \frac{ t^2}{2}\eta\:dx} = \bint{\epsilon Q - t\frac{1}{2}Q_x^2\:dx}\\
+            \text{(T5)}\qquad &&\dt\sint{ x\eta + t  q \eta_x\:dx} = 0
+        \end{eqnarray*}
+    \end{block}
+\end{frame}
+
+% ==============================================================================================
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Turning the Crank}
+    \emA{\bf Integral Relation B} with $\varphi = \frac{1}{6}(x + iz)^3$. The full expression is a bit complicated:
+    \tiny
+    \begin{displaymath}
+        \dt\sint{q(1-i\eta_x)(x + i \eta)-t\left(4i\emA{\mathscr{H}} - x\eta  -\frac{7i}{2}\eta^2\right) -\frac{t^2}{2\mu}q(1-7i\eta_x) - \frac{t^3}{6\mu}\eta\:dx}= \frac{t}{\mu}\bint{-Q\:dx} + \frac{t^2}{2\mu} \bint{\frac{\epsilon}{2}Q_x^2\:dx} - \bint{\frac{\epsilon}{2}Q_x^2(x-i\mu)\:dx}
+    \end{displaymath}\normalsize
+    where we have introduced the notation $$\emA{\mathscr{H} = \frac{1}{2}\left(q\eta_t + g\eta^2\right)}$$\pause
+    \begin{block}{Real/Imaginary Parts}
+        \vspace*{-.2in}
+        \begin{eqnarray*}
+        \text{(T8)} && \dt\sint{\left[q(x + \eta\eta_x)-gtx\eta - \frac{gt^2}{2}q - \frac{g^2t^3}{6}\eta\right]\:dx} = \bint{\left[\left(\frac{t^2}{2}-x\right)\frac{1}{2}Q_x^2-tQ\right]\:dx}\\
+        \text{(T7)} &&\dt\sint{\left[ q(\eta - x\eta_x)-t\left(4\emA{\mathscr{H}} - \frac{7}{2}\eta^2\right) + \frac{7 t^2}{2}q\eta_x\right]\:dx}=\bint{\frac{1}{2}Q_x^2\:dx}
+    \end{eqnarray*}
+\end{block}
+\end{frame}
+% ==============================================================================================
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Summary thus far...}
+    At this point, we have found the eight conservation laws found in \rcite{Benjamin \& Olver, Olver}
+    \small
+    \begin{table}
+	\renewcommand{\arraystretch}{1.8}
+	\hrule
+	\begin{tabular}{l|l}
+		$\displaystyle T_1 = -\eta_x q$              & Relation B $\varphi = \frac{1}{2}(x + iz)^2$\\
+		$\displaystyle T_2 = \frac{1}{2}q\eta_t + \frac{1}{2}g\eta^2$ & Relation A \emC{\bf Legendre Hint}\\
+		$\displaystyle T_3 = \eta$ &  Relation A  $\varphi = x +iz$\\
+		$\displaystyle T_4 = q + gt\eta$ & Relation B  $\varphi =\frac{1}{2} (x + iz)^2$\\ 
+		$\displaystyle T_5 = x\eta + t\eta_x q$  &Relation A $\varphi = \frac{1}{2}(x + iz)^2$\\
+		$\displaystyle T_6 = \frac{1}{2}\eta^2 - t q - \frac{1}{2}gt^2\eta$  &Relation A $\varphi = \frac{1}{2}(x+iz)^2$\\
+		$\displaystyle T_7 = (\eta - x \eta_x) q - t(4T_2-7gT_6)+\frac{7}{2}gt^2T_4 - \frac{7}{6}g^2t^3T_3$   & Relation B $\varphi = \frac{1}{6}(x + iz)^3$\\
+		$\displaystyle T_8 = (x + \eta\eta_x) q + gtT_5 + \frac{1}{2}gt^2T_1$ & Relation B $\varphi = \frac{1}{6}(x + iz)^3$
+	\end{tabular}
+    \hrule
+    \end{table}
+    \normalsize
+    \pause 
+    \vfill
+    \only<2>{We find (T7) directly once we observed the \emC{\bf Legendre-like transformation}.}
+    \only<3>{\emC{But what if we kept going?} Note: we haven't used \emA{\bf Integral Relation A} with $\varphi = \frac{1}{6}(x+iz)^3$}
+    
+\end{frame}
+% ==============================================================================================
+
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Some Remarks}
+
+     Summary of \emA{\bf Integral Relation A} with $\varphi = \frac{1}{6}(x+iz)^3$
+     \vfill
+     \pause
+    
+    \begin{itemize}
+        \item[-] \emA{\bf Integral Relation A} with $\varphi =\frac{1}{3}(x+iz)^3$ will not fit on the slide. Though systematic, the back substitution become tedious.  \pause
+        \vfill
+        \item[-] We have yet to find new non-trivial conservation laws in local coordinates. You can think of a density $F$ as a \emC{\bf trivial conserved density} if\\
+        \vspace*{.1in}
+            \hfill$\displaystyle\sint{F\,dx} = 0$.\hfill ~\\
+            \vspace*{.1in}
+        \pause So far, we haven't been able to show that the remainder satisfies this condition nor is it a combination of previously determined conservation laws.   \emC{\bf Hope(?) remains}.
+            \pause
+            \vfill
+        \item[-] There are some hints towards \emA{\bf nonlocal} conservation laws along the lines of the works by \rcite{Bluman \& Cheviakov}.  Likewise, our work with constant vorticity has provided additional insights regarding nonlocal conserved quantities.
+        \vfill
+    \end{itemize} 
+    \pause
+
+\begin{center}\large\emB{\bf Ok, so does this work for a 2D surface (3D Fluid)?}\normalsize\end{center}
+\end{frame}
+% ==============================================================================================
+
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Extending to a Two Dimensional Surface...}
+    At this point, we have found the 12 conservation laws found in \rcite{Benjamin \& Olver}
+    \small
+    \begin{table}
+	\renewcommand{\arraystretch}{1.9}
+	\hrule
+	\begin{tabular}{p{.4\textwidth}p{.4\textwidth}}
+		$\displaystyle T_1 = -\eta_x  q$, $\quad T_2 = -\eta_y q$ & $\displaystyle T_3 = \frac{1}{2} q\eta_t + \frac{1}{2}g\eta^2$\\
+		$\displaystyle T_4 = \eta$   &$\displaystyle T_5 =  q + gt\eta$\\ 
+        $\displaystyle T_6 = x\eta + t\eta_x q$, &$T_7 = y\eta + t\eta_y q$ \\
+        $\displaystyle T_8 = \frac{1}{2}\eta^2 - t q - \frac{1}{2}gt^2\eta$&$\displaystyle \alt<2>{\emA{T_9 = (x\eta_y - y\eta_x) q}}{T_9 = (x\eta_y - y\eta_x) q}$ \\
+        $T_{10} = (x + \eta\eta_x) q +gtT_6 + \frac{1}{2}gt^2T_1\qquad$&$\displaystyle T_{11} = (y + \eta\eta_y) q + gtT_7 + \frac{1}{2}gt^2T_1$  \\[.08in]
+        \multicolumn{2}{l}{$\displaystyle \alt<2>{\emA{T_{12} = (\eta - x\eta_x - y \eta_y) q + t(9gT_8 - 5\mathscr{H}) + \frac{9}{2}gt^2T_5 - \frac{3}{2}g^2t^3T_4}}{T_{12} = (\eta - x\eta_x - y \eta_y) q + t(9gT_8 - 5\mathscr{H}) + \frac{9}{2}gt^2T_5 - \frac{3}{2}g^2t^3T_4}$}\\\\
+    \end{tabular}
+    \vspace*{-.2in}
+    \hrule
+    \end{table}
+    \normalsize
+    \pause It is worth noting that $T_9$ and $T_{12}$ were found by taking the combination $$\emA{\varphi = \frac{1}{6}(y+iz)^3 - \frac{z}{2}(x+iy)^2.}$$
+\end{frame}
+    
+% ==============================================================================================
+
+

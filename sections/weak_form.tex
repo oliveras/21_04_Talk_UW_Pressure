@@ -1,0 +1,66 @@
+% !TEX root = ../Oliveras_Talk.tex
+\section{Nonlocal/Nonlocal Formulation}
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Nonlocal/Nonlocal Formulation: The First Integral Relation}
+
+For \emA{\bf any harmonic function \(\varphi(x,z)\)}, we have
+    \[\ooint{\left(\varphi_z\grad\phi - \phi\grad\varphi_z\right)\cdot \vn} = 0,\]
+    where we assume that \(\phi\) has sufficient decay properties as \(\vert x \vert \to \infty\).\pause 
+    ~Using the \emC{\bf kinematic boundary condition,}
+    \[\grad\phi\cdot\vn = \eta_t\quad \rightarrow\quad\sint{\alt<5->{\emA{\varphi_z\eta_t}}{\varphi_z\eta_t}\:dx} = \ooint{\phi\grad\varphi_z\cdot\vn}\]
+\pause 
+Similarly for \(\phi_t\): 
+    \[\ooint{\left(\varphi_z\emB{\grad\phi_t} - \emB{\phi_t}\grad\varphi_z\right)\cdot \vn} = 0,\]
+    \pause 
+    Using the \emC{\bf dynamic boundary condition,} along with \(\displaystyle \grad\phi_t\cdot\vn\big\vert_{\mathscr{S}} = \eta_{tt} + \frac{d}{dx}\left[\eta_t\phi_x(x,\eta,t)\right]\)\pause
+    \[\displaystyle{\sint{\dt q\left(\normD{\varphi_z}-2\varphi_{zz}\right)\:dx} =  \sint{g\eta (\varphi_{zz}+\eta_x\varphi_{xz})-\emA{\underbrace{2\eta_t\,q\,\varphi_{zzz}}_{(*)}}\:dx} + \bint{\frac{1}{2}Q_x^2\,\varphi_{zz}\:dx}}\]
+\end{frame}
+% ==============================================================================================
+
+
+% ==============================================================================================
+
+\begin{frame}[t]\frametitle{Nonlocal/Nonlocal Formulation - Summary / Comments}
+    
+    \emA{\bf Integral Relation A}~\\~\\
+        \(\displaystyle \sint{\dt\varphi\: dx} = \sint{\phi\left(\grad\varphi_z\cdot\vn\right)\,dx} - \bint{ Q\varphi_{zz}\:dx}\)\hfill\large\emA{\(\boxed{\displaystyle q = \phi(x,\eta,t), ~Q = \phi(x,-h,t)}\)}\normalsize \\~\\
+
+    \emA{\bf Integral Relation B}~\\~\\
+        \(\displaystyle{\sint{\dt q\left(\normD{\varphi_z}-2\varphi_{zz}\right)\:dx} =  \sint{g\eta (\varphi_{zz}+\eta_x\varphi_{xz})-\emA{\underbrace{2\eta_t\,q\,\varphi_{zzz}}_{(*)}}\:dx} + \bint{\frac{1}{2}Q_x^2\,\varphi_{zz}\:dx}}\)
+    \vfill
+    
+    \begin{overlayarea}{\linewidth}{.39\textheight}
+        \only<2>{%
+            \begin{block}{Remark \#1}
+                The \emC{\textbf{dynamic boundary condition}} was only prescribed at the last stage of deriving (B).  
+            \end{block}
+        }
+     
+        \only<3>{
+            \begin{block}{Remark \#2}
+                \(\varphi = e^{-ikx}\sinh(k(z +h))\), implies both \rcite{ZCS} and \rcite{AFM}. \\~\\ If we take \(k\to 0\) in both (A) and (B), we recover (T1) and (T3) immediately.
+            \end{block}
+            }
+        \only<4>{%
+            \begin{block}{Remark \#3}
+                We can generate a direct map from the \emC{\bf pressure at the bottom} to the free-surface variables.  This can be found by taking the combination \[\emA{\dt(A)-(B)}\]
+            \end{block}
+        }        
+    \end{overlayarea}
+\end{frame}
+% ==============================================================================================
+
+\begin{frame}[t]\frametitle{Pressure Relationship}
+
+    \emA{\bf Integral Relation A}~\\~\\
+        \(\displaystyle \sint{\dt\varphi\: dx} = \sint{\phi\left(\grad\varphi_z\cdot\vn\right)\,dx} - \bint{ Q\varphi_{zz}\:dx}\)\hfill\large\emA{\(\boxed{\displaystyle q = \phi(x,\eta,t), ~Q = \phi(x,-h,t)}\)}\normalsize \\~\\~\\
+
+    \emA{\bf Integral Relation B}~\\~\\
+        \(\displaystyle{\sint{\dt q\left(\normD{\varphi_z}-2\varphi_{zz}\right)\:dx} =  \sint{g\eta (\varphi_{zz}+\eta_x\varphi_{xz})-\emC{\underbrace{2\eta_t\,q\,\varphi_{zzz}}_{(*)}}\:dx} + \bint{\frac{1}{2}Q_x^2\,\varphi_{zz}\:dx}}\)\\~\\~\\
+     
+    \emA{\bf Integral Relation C}~\hfill\large\emA{\(\boxed{P_d(x,t) = \frac{p(x,-h,t)-\rho g h}{\rho}}\)}\normalsize\\~\\
+        \(\displaystyle\bint{\emC{P_d}\,\varphi_{zz}} = \rho\sint{\eta_{tt}\varphi_z+ \left(\eta_t^2 + g\eta\right)\varphi_{zz} + \left(g\eta\eta_x - 2\left(q_x\eta_t - q_t\eta_x\right)\right)\varphi_{xz}}\)
+
+    \vfill
+\end{frame}

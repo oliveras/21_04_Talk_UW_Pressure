@@ -1,0 +1,122 @@
+
+\newcommand{\drawFigure}[1]{
+	\psset{xunit=.3in,yunit=.10in,plotpoints=200,plotstyle=line}
+	\begin{center}
+	\begin{pspicture}(-8,-3)(8,6)
+	#1
+	\end{pspicture}\end{center}}
+	\newcommand{\drawFigureB}[1]{
+		\psset{xunit=.3in,yunit=.10in,plotpoints=200,plotstyle=line}
+		\begin{center}
+		\begin{pspicture}(-8,-3)(8,7.5)
+		#1
+		\end{pspicture}\end{center}}
+\newcommand{\yShift}{1.5}
+\newcommand{\amplitude}{1}
+\FPeval{\zResult}{clip(\yShift +\amplitude)}
+\FPeval{\xResult}{round(-7+2*pi,8)}			
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Plots
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\cosWave}{ 
+	\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!65,algebraic=true]{%
+		\psplot{-7}{7}{-1} %
+		\psplot{7}{-7}{\yShift+ \amplitude*cos(x+7)} 
+	}
+	\psplot[algebraic=true,linecolor=black]{7}{-7}{\yShift+ \amplitude*cos(x+7)} 
+}
+\newcommand{\expWave}{ 
+	\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!65,algebraic=true]{%
+		\psplot{-7}{7}{-1} %
+		\psplot{7}{-7}{\yShift+ \amplitude*2.71^(-(x/1.5)^2)} 
+	}
+	\psplot[algebraic=true,linecolor=black]{7}{-7}{\yShift+ \amplitude*2.71^(-(x/1.5)^2)}
+}
+\newcommand{\expWaveXYShift}[4]{ 
+	\pscustom[linestyle=none,fillstyle=solid,#4,algebraic=true]{%
+		\psplot{-7}{7}{-1} %
+		\psplot{7}{-7}{\fpeval{\yShift+#2}+ \fpeval{#3}*2.71^(-((x-\fpeval{#1})/1.5)^2)} 
+	}
+	\psplot[algebraic=true,linecolor=black]{7}{-7}{\fpeval{\yShift+#2}+ \fpeval{#3}*2.71^(-((x-\fpeval{#1})/1.5)^2)}
+}
+\newcommand{\cosWaveShift}[1]{ \psplot[algebraic=true]{7}{-7}{\yShift+ \amplitude*cos(x+7-#1)}}
+
+\newcommand{\plotAir}[1][30]{
+	\pscustom[linestyle=none,fillstyle=solid,fillcolor=air!#1,algebraic=true]{
+		\psplot{-7}{7}{0}\psplot{7}{-7}{5 } 
+	}
+}
+
+\newcommand{\plotTopLayer}{
+	\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!45,algebraic=true]{
+		\psplot{-7}{7}{0}\psplot{7}{-7}{5 } 
+	}
+}
+\newcommand{\plotAxes}[2]{
+	\psaxes[ticks=none,labels=none,arrowscale=2,,linewidth=.1pt,linecolor=black!80]{->}(-7,\yShift)(-7,-2)(7.5,6.5)
+	\uput[r](7.3,\yShift){#1}\uput[u](-7,6.5){#2}
+}
+
+\newcommand{\plotSingleDomain}{
+	\uput[u](-3.858407,-1){$D$}		
+	\pscustom[linestyle=dashed,fillstyle=none,linecolor=red,linewidth=2pt,algebraic=true]{%
+		\psplot{-7}{0}{-1} %
+		\psplot{0}{-7}{\yShift+ \amplitude*cos(x+7)}
+		\psline{-}(-7,\zResult)(-7,-1) 
+}
+	}
+
+\newcommand{\plotFlatWater}{ 
+	\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!65,algebraic=true]{%
+		\psplot{-7}{7}{-1} %
+		\psplot{7}{-7}{\yShift} 
+	}
+}
+
+\newcommand{\plotShear}[1]{
+\multido{\iX=0+1,\iY=0+1}{4}{%
+	\psline[arrows=<-,linestyle=solid,linewidth=.6pt](\fpeval{\iX/3+#1},\fpeval{(\yShift+1)/5*(\iY-1)})(\fpeval{#1+6/3},\fpeval{(\yShift+1)/5*(\iY-1)})}
+	\psline[linestyle = dotted,linecolor=black,linewidth=.9pt](\fpeval{#1+6/3},-1)(\fpeval{#1+6/3},\fpeval{\yShift+0})
+	\psline[linestyle = dotted,linecolor=black,linewidth=.9pt](\fpeval{#1-1/3},-1)(\fpeval{#1+4/3},\fpeval{0+\yShift})
+	
+}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Plots
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\plotBottom}{\pscustom[linestyle=solid,fillstyle=solid,fillcolor=seaBed,algebraic=true]{\psplot{-7}{7}{-1}\psplot{7}{-7}{-2 } } \psplot[algebraic=true]{-7}{7}{-1}}
+
+\newcommand{\plotTop}{\pscustom[linestyle=solid,fillstyle=solid,fillcolor=seaBed,algebraic=true]{\psplot{-7}{7}{6}\psplot{7}{-7}{5} } \psplot[algebraic=true]{-7}{7}{6}}
+
+\newcommand{\plotPressureSensor}{\pscustom[linestyle=solid,fillstyle=solid,fillcolor=pressureSensor,algebraic=true]{\psplot{-1}{1}{-1}\psplot{1}{-1}{-2 }\psplot{-1}{-1}{-1} }}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Animations
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\animateWave}[1]{
+	\psset{xunit=.25in,yunit=.15in,linewidth=.25pt,plotpoints=200,plotstyle=line}
+	\begin{pspicture}(-9,-3)(8,5.5)
+		\pscustom[linestyle=none,fillstyle=solid,fillcolor=air,algebraic=true]{\psplot{-7}{7}{0}\psplot{7}{-7}{5 } }\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!85,algebraic=true]{\psplot{-7}{7}{-1} \psplot{7}{-7}{\yShift+\amplitude*cos(x+7-(#1-1)/40*2*(3.14159)) } }\psplot[algebraic=true]{-7}{7}{\yShift+\amplitude*cos(x+7-(#1-1)/40*2*(3.14159)) } \pscustom[linestyle=none,fillstyle=solid,fillcolor=seaBed,algebraic=true]{\psplot{-7}{7}{-1}\psplot{7}{-7}{-2 } } \psplot[algebraic=true]{-7}{7}{-1}\uput[r](0,2.25){$z = \eta$}\uput[l](-7,\yShift){$z = 0$}\uput[l](-7,-1){$z = -h$}\pscustom[linestyle=solid,fillstyle=solid,fillcolor=pressureSensor,algebraic=true]{\psplot{-1}{1}{-1}\psplot{1}{-1}{-1.5 }\psplot{-1}{-1}{-1} }
+	\end{pspicture}
+	}
+\newcommand{\animateWaveWFrame}[1]{
+	\psset{xunit=.25in,yunit=.15in,linewidth=.25pt,plotpoints=200,plotstyle=line}
+	\begin{pspicture}(-8,-3)(8,5.5)
+		\pscustom[linestyle=none,fillstyle=solid,fillcolor=air,algebraic=true]{\psplot{-7}{7}{0}\psplot{7}{-7}{5 } }\pscustom[linestyle=none,fillstyle=solid,fillcolor=waterBlue!85,algebraic=true]{\psplot{-7}{7}{-1} \psplot{7}{-7}{1+.35*cos(x+7-#1) } }\psplot[algebraic=true]{-7}{7}{1+.35*cos(x+7-#1) } \pscustom[linestyle=none,fillstyle=solid,fillcolor=seaBed,algebraic=true]{\psplot{-7}{7}{-1}\psplot{7}{-7}{-2 } }\parametricplot[algebraic=true,arrows=->]{0}{2}{#1-7| \yShift + t}\parametricplot[algebraic=true,arrows=->]{0}{2}{#1-7+t| \yShift}
+	\end{pspicture}
+	}
+	
+	
+\def\VPh{\vphantom{\displaystyle\sum_{i=n}^m {i^2}}}
+\def\psBox#1#2{\psframebox[fillcolor=red!30,fillstyle=solid]{#2}}
+
+\newcommand{\psNewBox}[2]{\psframebox[linecolor=red,linewidth=1pt,linestyle=#1]{#2}}
+
+\newcommand{\preEqn}[3]{\rnode{phiZC}{\psNewBox{#2}{\displaystyle \etax \left(\phix - c\right)}}= \rnode{phiZA}{\psNewBox{#1}{\displaystyle \phiz}} \qquad -c\phix + \frac{1}{2}\left(\phix\right)^2+\!\!\rnode{phiZB}{\psNewBox{#3}{\displaystyle \frac{1}{2}\left(\phiz\right)^2}} \!\!\!\!+ \rho g\eta(x) = \rnode{phiZD}{0}}
+
+
+
+
+\psset{xunit=.25in,yunit=.15in,linewidth=.25pt,plotpoints=200,plotstyle=line}

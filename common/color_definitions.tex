@@ -1,0 +1,168 @@
+
+% --------------------------------------------
+% Color Theme 1
+
+% \definecolor{sblue}{HTML}{646c80}      
+% \definecolor{sbrown}{HTML}{807064}  
+% \definecolor{sgreen}{HTML}{009b79}
+% \definecolor{sred}{HTML}{9b1f00}
+% --------------------------------------------
+
+% --------------------------------------------
+% Color Theme 2
+
+\definecolor{sblue}{HTML}{3b009b}      
+\definecolor{sbrown}{HTML}{9b6d00}  
+\definecolor{sgreen}{HTML}{009b79}
+\definecolor{sred}{HTML}{9b1f00}
+% --------------------------------------------
+
+% --------------------------------------------
+% Color Theme 2
+
+\definecolor{sblue}{HTML}{699ad4}      
+\definecolor{sbrown}{HTML}{86796d}  
+\definecolor{sgreen}{HTML}{20e47d}
+\definecolor{sred}{HTML}{ff6363}
+
+\definecolor{syell}{HTML}{f9d160}
+\colorlet{syellT}{syell!20}
+\definecolor{snblue}{HTML}{452684}
+\definecolor{sblack}{RGB}{57,57,57}
+
+
+% --------------------------------------------
+% --------------------------------------------
+% Color Theme 2
+
+\definecolor{sblue}{HTML}{5460f3}      
+\definecolor{sbrown}{HTML}{5d1b0e}  
+\definecolor{sgreen}{HTML}{019f89}
+\definecolor{sred}{HTML}{fd6d5b}
+
+\definecolor{syell}{HTML}{f7dd54}
+\colorlet{syellT}{syell!20}
+\definecolor{snblue}{HTML}{130c59}
+\definecolor{sblack}{HTML}{0c0e0c}
+
+
+% --------------------------------------------
+% --------------------------------------------
+% Color Theme 2
+
+\definecolor{sblue}{HTML}{026da2}      
+\definecolor{sbrown}{HTML}{5f4226}  
+\definecolor{sgreen}{HTML}{0e9641}
+\definecolor{sred}{HTML}{f03342}
+
+\definecolor{syell}{HTML}{f7dd54}
+\colorlet{syellT}{syell!20}
+\definecolor{snblue}{HTML}{026da2}
+\definecolor{sblack}{RGB}{57,57,57}
+
+
+
+
+\colorlet{waterBlue}{sblue!80}
+\colorlet{air}{waterBlue!30}
+\colorlet{seaBed}{sbrown}
+\colorlet{pressureSensor}{sgreen}
+
+
+%\definecolor{sblue}{RGB}{8,128,153}
+
+
+\newcommand{\emphA}[1]{{\red{\underline{#1}}}}
+\newcommand{\emphB}[1]{{\blue{\underline{#1}}}}
+\newcommand{\emphC}[1]{{\textcolor{sgreen}{\underline{#1}}}}
+\newcommand{\emphI}[1]{{\textcolor{sgreen}{\emph{#1}}}}
+\newcommand{\rcite}[1]{{\color{sblue}{{\bf[#1]}}}}
+
+
+
+\newcommand{\emA}[1]{{\color{sred}{{#1}}}}
+\newcommand{\emB}[1]{{\color{sgreen}{{#1}}}}
+\newcommand{\emC}[1]{{\color{snblue}{{#1}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Slide Stuff
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamercolor{title}{fg=sblack}
+
+\setbeamerfont{subtitle}{size=\large,series=\bfseries}
+\setbeamercolor{subtitle}{fg=sblue}
+
+\setbeamerfont{author}{size=\large, series=\bfseries}
+\setbeamercolor{author}{fg=sred}
+
+\setbeamerfont{institute}{size=\large,series=\bfseries}
+\setbeamercolor{institute}{fg=sred}
+
+\setbeamerfont{date}{size=\normalsize,series=\ttfamily}
+\setbeamercolor{date}{fg=sgreen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamercolor{block title}{bg=syell!40,fg=black}
+\setbeamercolor{block body}{bg=syellT!60,fg=black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setbeamercolor{enumerate items}{bg=sblack}
+\setbeamercolor{local structure}{fg=sblack}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{section in toc}{size=\large, series=\bfseries}
+\setbeamercolor{section in toc}{fg=sblack}
+\setbeamercolor{subsection in toc}{fg=sblack!80}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Titles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamercolor{frametitle}{fg=white,bg=sblack!90}
+\addtobeamertemplate{frametitle}{}{\vspace*{-.15cm}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame Footers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{title in head/foot}{series=\bfseries,size=\tiny}
+\setbeamerfont{date in head/foot}{series=\bfseries,size=\tiny}
+\setbeamerfont{author in head/foot}{size=\tiny}
+\setbeamercolor{section in head/foot}{fg=sblue, bg=white}
+
+\newcommand{\footlineheight}{3ex}
+
+
+\makeatletter
+\setbeamertemplate{footline}
+{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.3333333333333\paperwidth,ht=\footlineheight,dp=2ex,left,sep=0em]{section in head/foot}%
+            ~~\hspace*{1.125em}\usebeamerfont{author in head/foot}{\insertshortauthor}%
+        \end{beamercolorbox}\!%
+        \begin{beamercolorbox}[wd=.3333333333333\paperwidth,ht=\footlineheight,dp=2ex,center,sep=0em]{section in head/foot}%
+            \usebeamerfont{title in head/foot}{\insertshorttitle}%
+        \end{beamercolorbox}\!%
+        \begin{beamercolorbox}[wd=.3333333333333\paperwidth,ht=\footlineheight,dp=2ex,right,sep=0em]{section in head/foot}%
+            \usebeamerfont{date in head/foot}{\insertframenumber{} / \inserttotalframenumber}~~%
+        \end{beamercolorbox}\!%
+        \begin{beamercolorbox}[wd=1.125em,ht=\footlineheight,dp=2ex,right,sep=0em]{section in head/foot}%
+        \end{beamercolorbox}%
+    }%
+  \vskip-.25em%
+}
+\makeatother
+

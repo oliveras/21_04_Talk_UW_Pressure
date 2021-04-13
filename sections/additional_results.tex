@@ -1,0 +1,99 @@
+% !TEX root = ../Oliveras_Talk.tex
+\section{Additional Results}
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Conservation Laws for Constant Vorticity}
+    \begin{overlayarea}{\textwidth}{.3\textheight}
+        \begin{center}
+            \drawFigureB{
+                \plotBottom
+                \plotAir
+                \expWave
+                \plotShear{-5}
+                \uput[r](-7,0){\small $u \to -\omega z$}
+            }
+        \end{center}
+    \end{overlayarea}
+    \begin{overlayarea}{\textwidth}{.7\textheight}
+            \only<1>{
+            \emA{\bf Integral Relation A}\\~\\
+            \small
+            $\displaystyle \dt\sint{\varphi\:dx} = \sint{\varphi_x\left(u+\eta_x v\right) + \omega\eta\tangD{\varphi}\:dx} -  \bint{u\varphi_x\:dx}$%\hfill \emA{$\boxed{\text{Subject to } \varphi(x,z)=-\varphi(-x,z)}$} 
+            \normalsize
+
+            \vspace*{.2in}
+
+            \emA{\bf Integral Relation B}\\~\\
+            \small
+            $\displaystyle \dt\sint{\varphi_x\left(u+\eta_x v\right) + \omega\eta\tangD{\varphi}\:dx}= \sint{\left(2(q_t\varphi_{zz}+\omega\eta_t\varphi_x) + g\eta(\varphi_{zz}+\eta_x\varphi_{xz})\right)\:dx}-\bint{\frac{1}{2}u^2\varphi_{zz}\:dx}$\\
+            \hfill \emA{$\boxed{\displaystyle q=-\omega\partial_x^{-1}\eta}$} \normalsize
+            }
+            \only<2>{
+                \emA{\bf Conserved Densities}
+                \footnotesize
+                \begin{align*}
+                    &\displaystyle T_1 = -\eta_x \zeta\qquad &&\displaystyle T_2 = \frac{1}{2}\phi\eta_t -\frac{\omega}{2}\eta^2\frac{d\phi}{d x} + \frac{1}{3}\omega^2\eta^3+ g\eta^2\\~\\
+                    &\displaystyle T_3 = \eta &&\displaystyle T_4 = q + gt\eta - 2\omega x \eta - \omega t \zeta\eta_x\\~\\
+                    &\displaystyle T_5 = x\eta + t\zeta\eta_x &&\displaystyle T_6 = \frac{1}{2}\eta^2 - tq -\frac{1}{2}gt^2\eta + \omega t x \eta  \\~\\
+                    &\displaystyle T_7 = \textsf{\emph{undetermined}}&&   \displaystyle T_8 = (x + \eta\eta_x)q -\frac{\omega x^2 \eta}{2}+ gtx\eta +\frac{1}{2}t^2g \zeta\eta_x +\frac{\omega}{3}\eta^3
+                \end{align*}
+                \normalsize
+            }
+            \end{overlayarea}
+        
+\end{frame}
+% ==============================================================================================
+
+\newcommand{\dtsum}[1]{\sum_{j} #1}
+\newcommand{\surfint}{\oint_{\mathscr{D}_j}}
+
+
+\begin{frame}[t]\frametitle{Conservation Laws for $N$-layers}
+    \begin{overlayarea}{\textwidth}{.3\textheight}
+        \begin{center}
+            \drawFigureB{
+                \plotBottom
+                \plotAir
+                
+                \expWaveXYShift{4}{6}{.35}{fillcolor=waterBlue!25}\uput[l](7,\fpeval{5+\yShift}){\small\bf Fluid 1}
+                \expWaveXYShift{2}{4}{.35}{fillcolor=waterBlue!45}\uput[l](7,\fpeval{3+\yShift}){\small\bf Fluid 2}
+                \expWaveXYShift{0}{2}{.35}{fillcolor=waterBlue!65}\uput[l](7,\fpeval{.75+\yShift}){\small $\vdots$}     
+                \expWaveXYShift{-4}{-1}{.35}{fillcolor=waterBlue!85}\uput[l](7,\fpeval{-1+\yShift/2}){\small\bf Fluid N}
+                \uput[u](0,1){$\vdots\qquad\qquad\vdots\qquad\qquad\vdots$}
+
+            }
+        \end{center}
+    \end{overlayarea}
+    \begin{overlayarea}{\textwidth}{.7\textheight}
+            \only<1>{
+            \emA{\bf Integral Relation A}\\~\\
+            \small
+            \begin{tabular}{lr}
+                $\displaystyle \dt\left[\sum_j\iintj{j}{\tilde\rho_j\varphi - \epsilon t\tilde q_j\normD{\varphi_z}}\right]=-\epsilon t \dt\left[\sum_j\iintj{j}{\tilde q_j\,\normD{\varphi_z}}\right]$&$\emA{\boxed{\begin{array}{l}\tilde q_j = \rho_{j-1}\phi_{j-1}-\rho_j \phi_j\vert_{z = \epsilon\mu\eta_j}\\\tilde\rho_j = \rho_{j-1}-\rho_j\\\rho_0=\rho_{\alt<3>{3}{N+1}}=0\end{array}}}$\end{tabular}\normalsize
+
+            \vspace*{.2in}
+
+            \emA{\bf Integral Relation B}\\~\\
+            \small
+            $\displaystyle \sum_j\dt\iintj{j}{\tilde q_j\left(\normD{\varphi_z}-2\varphi_{zz}\right)}= \sum_j\left[\iintj{j}{-2\epsilon\mu\eta_{j,t}\tilde q_j\varphi_{zzz}+(\mu\tilde\rho\eta_j)\left(\varphi_{zz}+\epsilon\mu\eta_{j,x}\varphi_{xz}\right)} \right]$
+        
+            \normalsize
+            }
+            \only<2>{
+                \emA{\bf Conserved Densities}
+                \small
+                \footnotesize
+                \begin{align*}
+                    &\displaystyle T_1 = \dtsum{\surfint \rho_j \phi_j \, dz}~~~~&&T_2 =  \dtsum{\surfint \phi_j\frac{\partial\phi_j}{\partial n }+gz^2\, dx}&&\displaystyle T_3 = \dtsum{\surfint \rho_j z \, dx}\\
+                    &\displaystyle\displaystyle T_4 = \dtsum{\surfint \rho_j \phi_j +\rho_j g tz\, dx}~~ &&\displaystyle T_5 = \dtsum{\surfint \rho_j xz \, dx +t\rho_j\phi_j \, dz}&&\displaystyle T_6 = \dtsum{\surfint -\rho_j z^2/2 +t\rho_j\phi_j+\frac{t^2}{2}gz\rho_j \, dx}~~~~~~~~~~
+                \end{align*}
+                    $\displaystyle T_7 =\dtsum{\surfint -\rho_j z\phi_j+4\mathscr{H}_j t +\rho_j\bigg(-\frac{7gtz^2}{2}+\frac{7gt^2}{2}\phi_j+\frac{7gt^3z}{6}\bigg)\, dx + x\rho_j\phi_j\, dz}$\\
+                    $\displaystyle T_8 = \dtsum{\surfint (\phi_j x\phi_j+\rho_j gtxz)\,dx+(\rho_j z \phi_j-\frac{\rho_j t^2}{2}\phi_j)\,dz}$ \hspace*{1in} \pause \emA{\Large{$\boxed{\textsf{\bf Coarea Formula}}$}}
+            \normalsize
+                \normalsize
+            }
+    \end{overlayarea}
+\end{frame}
+
+% ==============================================================================================
+

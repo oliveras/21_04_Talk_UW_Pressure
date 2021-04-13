@@ -1,0 +1,38 @@
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}  
+\usepackage{graphicx}
+
+\usepackage[]{xcolor}
+\usepackage[]{pstricks}
+\usepackage{pst-plot,pst-node,pst-func,pst-grad}
+\usepackage{multido}
+\usepackage[nomessages]{fp}
+\usepackage{xfp}
+\usepackage{booktabs}
+
+\usefonttheme[onlymath]{serif}
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+\setbeamertemplate{navigation symbols}{}
+
+\makeatletter
+\def\th@mystyle{%
+    \normalfont % body font
+    \setbeamercolor{block title example}{bg=waterBlue!40,fg=black}
+    \setbeamercolor{block body example}{bg=waterBlue!10,fg=black}
+    \def\inserttheoremblockenv{exampleblock}
+  }
+\makeatother
+\theoremstyle{mystyle}
+\newtheorem*{remark}{}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection,%
+    hideothersubsections,% 
+    sectionstyle=show/shaded,% 
+    subsectionstyle=show/shaded]
+  \end{frame}
+}

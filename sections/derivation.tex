@@ -1,0 +1,361 @@
+%  !Tex root = ../Oliveras_JMM_January_2018.tex
+
+%\section{Derivation of the Nonlinear Formulae}
+
+
+
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% % Assumptions Slide
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% 	\begin{frame}[t]
+% 		\frametitle{Model Assumptions}
+		
+% 		We begin with Euler's equations for an \emphTerm{invicid}, \emphTerm{irrotational} fluid. 
+
+% 		\vfill
+% 		\begin{center}
+% 		\begin{tabular}{p{.45\textwidth} p{.45\textwidth}}
+% 			- One-dimensional & - Stationary Flow\\ & \\
+% 			- Irrotational \& Invicid &  - No friction/boundary layer effects\\ & \\
+% 			- Constant Density & - Zero Atmospheric Pressure\\
+% 			\end{tabular}
+% 			\end{center}
+% 		\vfill
+
+% 		\begin{center}	
+% 			\includegraphics[width=\textwidth]{make_images/alternative_flow.pdf}
+% 			\end{center}
+% 			\vspace*{.1\textheight}
+% 		\end{frame}
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Full Equations
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% \begin{frame}[t]
+	% 	\frametitle{Equations of Motion - Steady Flow}
+	% 		\begin{center}
+	% 			\vspace*{-.2in}
+	% 			\includegraphics[]{make_images/alternative_flow.pdf}
+	% 			\end{center}
+	% 			\vspace*{-.2in}
+	% 		We begin with Euler's equations for irrotational free-surface flow given by 
+	% 		\begin{align*}
+	% 			&\phi_{xx} + \phi_{zz} =0,  & &(x,z) \in D,\\
+	% 			&\phi_z- \emC{b_x}\phi_x=0, & &z = \emC{b(x)},\\
+	% 			&\phi_z -\eta_x\phi_x=0,  &&z =\eta(x), \\
+	% 			&\frac{1}{2}\phi_x^2 + \frac{1}{2}\phi_z^2 +g \eta =\frac{B}{2}, && z =\eta(x),
+	% 			\end{align*}
+
+	% 		with the horizontal boundary conditions 
+	% 		\begin{align*}
+	% 			&\phi_z = 0, &&x = 0, \textsf{ and }x =L,\\
+	% 			&\phi_x = U_a(z) && x = 0,\\
+	% 			&\phi_x = U_b(z) && x = L.
+	% 			\end{align*}
+			
+
+	% 	\end{frame}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% % First Slide
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% \begin{frame}[t]
+% 	\frametitle{Equations of motion - at the free surface}
+	
+% 		At the \emphTerm{free surface}, we have 
+
+% 		$$\displaystyle \phi_z \Big\vert_{z = \eta} = \eta_x\phi_x\Big\vert_{z = \eta}$$
+
+% 		and 
+
+% 		$$\frac{1}{2}\phi_x^2\Big\vert_{z = \eta} + \frac{1}{2}\phi_z^2\Big\vert_{z = \eta} + g\eta = \frac{1}{2}B,$$ ~\\
+
+% 		where $B$ is the \emphTerm{Bernoulli Constant}. \\~\\
+
+% 		Combining the two relationships, we find $$\boxed{\phi_x = \pm \frac{\displaystyle\sqrt{B - 2g\eta}}{\displaystyle \sqrt{1 + \eta_x^2}}.}$$
+% 		\vfill
+% 		\emphPoint{Thus, we can express the velocity potential at the surface in terms of the Bernoulli constant, and the surface elevation.}
+% 	\end{frame}
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% % First Slide
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% \begin{frame}[t]
+% 	\frametitle{Equations of motion - at the bottom}
+	
+% 		At the \emphTerm{bottom}, we have 
+
+% 		$$\displaystyle \phi_z \Big\vert_{z = b} = b_x\phi_x\Big\vert_{z = b}$$
+
+% 		and 
+
+% 		$$\frac{1}{2}\phi_x^2\Big\vert_{z = b} + \frac{1}{2}\phi_z^2\Big\vert_{z = b} + g\cdot b(x) + p_b(x) = \frac{1}{2}B$$ ~\\
+% 		where $B$ is the \emphTerm{Bernoulli Constant} and $p_b(x) = p(x,b(x))$. \\~\\
+
+% 		Combining the two relationships, we find 
+
+% 		$$\boxed{\phi_x = \pm \frac{\displaystyle\sqrt{B - 2\:b(x) - 2 \:p_b(x)}}{\displaystyle\sqrt{ 1 + b_x^2}}}$$
+
+% 		\vfill
+% 		\emphPoint{Thus, we can express the velocity potential at the bottom in terms of the Bernoulli constant, the pressure along the bottom, and the surface elevation.}
+% 	\end{frame}
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% \begin{frame}[t]
+% 	\frametitle{Equations of Motion: Boundary Conditions} 
+% 	\begin{center}
+% 	\includegraphics[]{make_images/alternative_flow.pdf}
+% 	\end{center}
+% 	\vfill
+
+
+% 	\begin{center}
+% 	\begin{tabular}{|c|c|}
+% 	\hline
+% 	&\\
+% 		\large{\emB{At the Bottom}}&\large{\emC{At the Surface}}\\ & \\
+% 		\hline
+% 		&\\
+% 		$~~~~\displaystyle \phi_x - c =\sqrt{c^2-2\emB{p(x)}}~~~~$&$~~~~\displaystyle \phi_x- c = \frac{\sqrt{c^2 - 2g\emA{\eta}}}{\sqrt{1 + \emA{\eta}_x^2}}~~~~$\\ & \\ 
+% 		\hline
+% 		&\\
+% 		$\displaystyle \phi_z = 0$&$\displaystyle \phi_z=\frac{\eta_x\sqrt{c^2 - 2g\emA{\eta}}}{\sqrt{1 + \emA{\eta}_x^2}}$\\
+% 		&\\
+% 		\hline
+% 	\end{tabular}
+% 	\end{center}
+% 	\vfill
+
+	
+% \end{frame}
+
+% \begin{frame}[t]
+% 	\frametitle{Equations of Motion: Boundary Conditions} 
+	
+% 	\vfill
+% 	\begin{center}
+% 	\begin{tabular}{|c|c|}
+% 	\hline
+% 	&\\
+% 		\Large{\emC{At the Surface}}&\large{\emA{At the Bottom}}\\ & \\
+% 		\hline
+% 		&\\
+% 		$~~~~\displaystyle \phi_x = \pm\frac{\displaystyle \sqrt{B - 2g\eta}}{\displaystyle \sqrt{1 + \eta_x^2}}~~~~$&$~~~~\displaystyle \phi_x = \pm \frac{\displaystyle\sqrt{B - 2\:b(x) - 2 \:p_b(x)}}{\displaystyle\sqrt{ 1 + b_x^2}}~~~~$\\ & \\ 
+% 		\hline
+% 		&\\
+% 		$~~~~\displaystyle \phi_z = \pm\eta_x\frac{\displaystyle \sqrt{B - 2g\eta}}{\displaystyle \sqrt{1 + \eta_x^2}}~~~~$&$~~~~\displaystyle \phi_z = \pm b_x \frac{\displaystyle\sqrt{B - 2\:b(x) - 2 \:p_b(x)}}{\displaystyle\sqrt{ 1 + b_x^2}}~~~~$\\ & \\ 
+% 		\hline
+% 	\end{tabular}
+% 	\end{center}
+% 	\vfill
+% 	\pause 
+	
+% 	\begin{overlayarea}{\textwidth}{.2\textheight}
+
+% 		\only<4>{
+% 		To summarize, we have expressed the gradient of the velocity
+% 		\begin{itemize}
+% 			\item[-] at the \emC{surface} in terms of the surface elevation, and 
+% 			\item[-] at the \emA{bottom} in terms of the pressure and bathymetry.
+% 			\end{itemize}
+% 		}
+		
+% 		\only<2-3>{\emB{A note about the $\pm$ signs:}  \pause
+
+% 		Since we are assuming that the fluid is irrotational, then $\phi_x$ must be sign-definite throughout the domain. For simplicity, we choose the $+$ sign. }
+		
+% 		\end{overlayarea}
+
+	
+% 	\end{frame}
+
+
+
+
+
+
+% \begin{frame}[t]
+% 	\frametitle{Connecting the dots} 
+% 	Recall that the connecting glue is $$\phi_{xx} + \phi_{zz} = 0, \textsf{~~for } b(x) < z <\eta(x).$$
+% 	\pause
+% 	\vfill
+% 	Imagine we have another function $\psi$ that also solve Laplace's equation.
+% 		$$\psi_z(\phi_{xx}+\phi_{zz})-\phi_z(\psi_{xx}+\psi_{zz})=0$$
+% 	\pause
+% 	\vfill
+% 	This can be arranged to 
+% 	$$	( \psi_z \phi_{x} + \psi_{z}\phi_{x})_x - (\phi_x \psi_x - \phi_z\psi_z)_z=0
+% $$
+% 	\pause
+% 	\vfill
+% 	Integrating over the entire domain yields: 
+% 		\begin{overlayarea}{\textwidth}{.2\textwidth}
+% 		\only<4>{$$\iint_D( \psi_z \phi_{x} + \psi_{z}\phi_{x})_x - (\phi_x \psi_x - \phi_z\psi_z)_z dA=0$$}
+% 		\only<5>{
+% 			$$\oint_{\partial D}\big[(\phi_x\psi_z+\phi_z\psi_x)dz+(\phi_x\psi_x-\phi_z\psi_z)dx\big]=0$$}
+% 			\end{overlayarea}
+	
+% \end{frame}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% First Slide
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% \begin{frame}[t]
+% 	\frametitle{Introducing an Auxiliary Function}\framesubtitle{A cute way to look at things...}
+
+% 			\begin{center}
+% 				\vspace*{-.2in}
+% 				\includegraphics[]{make_images/alternative_flow.pdf}
+
+% 				\begin{overlayarea}{\textwidth}{.5\textheight}
+				
+% 				Let $\psi$ be \emB{\textit{any}} harmonic function.  \pause Then
+% 				\begin{center}
+% 				$$\oint_{\partial D}\big[(\phi_x\psi_z+\phi_z\psi_x)dz+(\phi_x\psi_x-\phi_z\psi_z)dx\big]=0$$~\\ \pause
+% 				\only<2>{\begin{tabular}{p{.45\textwidth}|p{.45\textwidth}}
+% 				{\emA{At the Surface}}&{\emB{At the Bottom}}\\
+% 				\hline
+% 				&\\
+% 				$~~~~\displaystyle \phi_x = \frac{\displaystyle \sqrt{B - 2g\eta}}{\displaystyle \sqrt{1 + \eta_x^2}}~~~~$&$~~~~\displaystyle \phi_x =  \frac{\displaystyle\sqrt{B - 2gb(x) - 2 \:p_b(x)}}{\displaystyle\sqrt{ 1 + b_x^2}}~~~~$\\		&\\
+% 				$~~~~\displaystyle \phi_z = \eta_x\frac{\displaystyle \sqrt{B - 2g\eta}}{\displaystyle \sqrt{1 + \eta_x^2}}~~~~$&$~~~~\displaystyle \phi_z =  \frac{\displaystyle b_x\sqrt{B - 2gb(x) - 2 \:p_b(x)}}{\displaystyle\sqrt{ 1 + b_x^2}}~~~~$
+% 				\end{tabular}}\end{center}
+% 				\only<3>{Using the boundary conditions, the above integral becomes\\
+% 					$\displaystyle\int_0^L\left[\sqrt{(1 + b_x^2)(B - 2 gb(x) - p_b(x))}\:\psi_x\Big\vert_{z=b}\right]\:dx + \int_{b(0)}^{\eta(0)} U_a(z)\:\psi_z(0,z)\:dz$~\\~\\~\\
+% 			\hfill$\displaystyle - \int_0^L\left[\sqrt{(1 + \eta_x^2)(B - 2 g\eta(x))}\:\psi_x\Big\vert_{z=\eta}\right]\:dx - \int_{b(L)}^{\eta(L)} U_b(z)\:\psi_z(0,z)\:dz = 0,$\\~\\~\\~\\
+
+					
+% 				}
+				
+% 				\end{overlayarea}
+% 				\end{center}
+% 	\end{frame}
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+
+\begin{frame}[t]
+	\frametitle{To summarize...}
+		We can related the quantities of interest via the equation\\~\\
+			
+			\only<1-2>{$\displaystyle\int_0^L\left[\sqrt{(1 + b_x^2)(B - 2 gb(x) - p_b(x))}\:\psi_x\Big\vert_{z=b}\right]\:dx + \int_{b(0)}^{\eta(0)} U_a(z)\:\psi_z(0,z)\:dz$~\\~\\~\\
+			\hfill$\displaystyle - \int_0^L\left[\sqrt{(1 + \eta_x^2)(B - 2 g\eta(x))}\:\psi_x\Big\vert_{z=\eta}\right]\:dx - \int_{b(L)}^{\eta(L)} U_b(z)\:\psi_z(0,z)\:dz = 0,$}
+			\only<3->{$\displaystyle\int_0^L\left[\sqrt{(1 + b_x^2)(\emC{B} - 2 gb(x) - \emA{p_b(x)})}\:\psi_x\Big\vert_{z=\emA{b}}\right]\:dx + \int_{b(0)}^{\emA{\eta(0)}} U_a(z)\:\psi_z(0,z)\:dz$~\\~\\~\\
+			\hfill$\displaystyle - \int_0^L\left[\sqrt{(1 + \emA{\eta_x}^2)(B - 2 g\emA{\eta(x)})}\:\psi_x\Big\vert_{z=\emA{\eta}}\right]\:dx - \int_{b(L)}^{\emA{\eta(L)}} U_b(z)\:\psi_z(0,z)\:dz = 0,$}\\~\\~\\
+
+			where the only restriction is that $\psi$ satisfies $\Delta \psi = 0.$\\~\\
+			
+		\pause
+		\only<2>{At this point, assume that we know $b(x)$, so that $\emA{p(x)}$, $\emA{\eta(x)}$, and $\emC{B}$ are all unknown.}
+		\only<4-5>{If we choose $\psi = z$, 
+
+		$$\int_{b(0)}^{\eta(0)} U_a(z) \:dz = \int_{b(L)}^{\eta(L)}U_b(z)\:dz$$}
+		\only<5>{\begin{center} \emC{Conservation of Mass}\end{center}}
+		\only<6-9>{If we choose $\displaystyle \psi = \frac{xz}{(\eta(L)-b(L))}$,\pause \pause\pause\pause\pause\\~\\
+
+		 $\displaystyle\frac{1}{\eta(L)-b(L)}\int_{b(L)}^{\emA{\eta(L)}} U_b(z)\:\psi_z(0,z)\:dz $ \\
+		 \qquad \qquad $= \displaystyle \frac{1}{L(\eta(L)-b(L))}\int_0^L\left[b(x)\sqrt{(1 + b_x^2)(\emC{B} - 2 gb(x) - \emA{p_b(x)})}\right]\:dx$
+		 \\
+		 \qquad \qquad \qquad \qquad $\displaystyle   - \frac{1}{L(\eta(L)-b(L))}\int_0^L\left[\eta\sqrt{(1 + \emA{\eta_x}^2)(B - 2 g\emA{\eta(x)})}\right]\:dx$  }
+		\only<9>{
+		\begin{center} \emC{Conditions on the depth-average velocities in terms of the bathymetry, free-surface, and pressure at the bottom}\end{center}
+		}\vfill
+		\only<10>{%
+		\begin{center}
+			\emB{\huge{How many relationships are enough to \\directly relate $b(x)$ and $\eta(x)$?}}
+			\end{center}
+			\vfill}
+				
+	\end{frame}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% First Slide
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{frame}[t]
+	\frametitle{Relating the quantities of interest}
+		Following the work of \rcite{Ablowitz, \textit{et. al}}, \rcite{O., Vasan, Deconinck\& Henderson}, let \\~\\
+		\pause
+		$$\psi_1 = e^{-ikx}\textsf{sinh}(kz), \quad \textsf{and}\quad \psi_2 = e^{-ikx}\textsf{cosh}(kz).$$
+		\vfill
+		\pause
+		
+		\begin{center}
+	 	\begin{tabular}{!{\color{blue}\vrule}c!{\color{blue}\vrule}}
+		\arrayrulecolor{blue}\hline
+		\\
+		$\displaystyle \mathcal{S}(b(x),k)\left\lbrace\sqrt{(1 + b_x^2)(\emC{B} - 2 g b(x) - 2\emA{p_b(x)})}\right\rbrace~ + ~U_a\left(\sinh\left(k\:\!\emB{\eta(0)}\right) - \sinh\left(k\:\!b(0)\right)\right)$\\ \\
+		$\displaystyle - ~\mathcal{S}(\emB{\eta(x)},k)\lbrace\sqrt{(1 + \emB{\eta}_x^2)(\emA{B} - 2 g \emB{\eta(x)})}\rbrace -  ~U_b\left(\sinh\left(k\:\!\emB{\eta(L)}\right) - \sinh\left(k\:\!b(L)\right)\right) = 0$\\ \\
+		\hline
+		\end{tabular}~\\
+
+		\vfill
+
+		
+	 	\begin{tabular}{!{\color{blue}\vrule}c!{\color{blue}\vrule}}
+		\arrayrulecolor{blue}\hline
+		\\
+		$\displaystyle \mathcal{C}(b(x),k)\left\lbrace\sqrt{(1 + b_x^2)(\emC{B} - 2 g b(x) - 2\emA{p_b(x)})}\right\rbrace~ + ~U_a\left(\cosh\left(k\:\!\emB{\eta(0)}\right) - \sinh\left(k\:\!b(0)\right)\right)$ \\ \\
+		$\displaystyle - ~\mathcal{C}(\eta(x),k)\lbrace\sqrt{(1 + \emB{\eta}_x^2)(B - 2 g \emB{\eta}(x))}\rbrace -  ~U_b\left(\cosh\left(k\:\!\emB{\eta}(L)\right) - \sinh\left(k\:\!b(L)\right)\right) = 0$~\\ \\
+		\hline
+		\end{tabular}
+		\end{center}
+		\vfill
+		\pause
+		These equations form a ``system'' of $2$ equations for $3$ unknowns: $\emA{p_b(x)}$, $\emB{\eta(x)}$, and $B$.\\
+		\pause While $B$ can be considered an unknown, we can relate $B$ to the values of $\emB{\eta(x)}, b(x)$ and $\emA{p_b(x)}$ at $x = 0$ and $x = L$ via the Bernoulli Equation.
+		
+
+
+	\end{frame}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% First Slide
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{frame}[t]
+	\frametitle{The question you may be asking...}
+	\begin{center}
+		\includegraphics[width=.9\textwidth]{make_images/alternative_flow_title_label.pdf}
+		\end{center}
+\vfill
+
+		\boxedTableTextWidth{~\\Given $b(x)$, is this system of equations actually solvable for the other two parameters?  Specifically, given $b(x)$, will you find the \emph{correct} $p_b(x)$ and $\eta(x)$?\\}
+		\vfill
+	\end{frame}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% % First Slide
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% \begin{frame}[t]
+% 	\frametitle{Outline of the Proof (for traveling waves/flat bottom)}
+% 		The principle idea behind the proof is to use the implicit function theorem.
+% 		\vfill
+% 		\begin{itemize}
+% 			\item[-] We define the appropriate Banach spaces.
+% 			\vfill
+% 			\item[-] Use the implicit function theorem to determine the existence of a map.
+% 			\vfill
+% 			\item[-] Establish that if the pressure corresponds to a true solution of the water-wave problem, then the maps gives the true surface elevation as a function of the pressure.
+% 			\vfill
+% 			\end{itemize}
+% 		\vfill
+% 		\boxedTableTextWidth{~\\In other words, given small amplitude true pressure data, we can determine the true surface elevation for a fixed wave speed.\\}
+% 		\vfill
+% 		\pause We are currently working to extend these results to this problem.
+% 	\end{frame}
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

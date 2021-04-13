@@ -1,0 +1,59 @@
+% !TEX root = ../Oliveras_Talk.tex
+
+
+\section{Introduction}
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Motivation / Problem Description}
+    \vfill
+    \drawFigure{
+        \plotAir
+        \expWave
+        \plotBottom
+        \plotPressureSensor
+        \only<1>{
+            \uput[l](-2,-7){\textcolor{sgreen}{\Large \bf Given pressure}}
+            \uput[r](3,7){\textcolor{sblue}{\Large\bf Reconstruct the wave}}
+        }
+        \only<2>{
+            \uput[l](-2,-7){\textcolor{sgreen}{\Large \bf Given: \(p(x-ct)\)}}
+            \uput[r](3,7){\textcolor{sblue}{\Large\bf Found: \(\eta(x-ct)\)}}
+        }
+
+        \psline[arrows=->,linecolor=sgreen,linewidth=3pt](-2,-7)(0,-2)
+        \psline[arrows=->,linecolor=sblue,linewidth=3pt](3,7)(1,2.1)
+
+    }
+    \vspace*{.75in}
+    \only<2>{
+        {\Large\emA{\bf Joint work: Deconinck, Henderson, Oliveras, Vasan} }
+    }
+\end{frame}
+% ==============================================================================================
+
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Observations in Experiments}
+
+    \input{images/data.tex}
+    \begin{center}
+    \psset{xunit=.6in,yunit=.65in}
+    \begin{pspicture}(-.5,-1.2)(8.75,1.5)
+        \pscustom[fillstyle=solid,fillcolor=air!30,linewidth=0pt,linecolor=air!30]{
+            \psplot[algebraic=true]{0}{8.0607}{1.25}
+            \psplot[algebraic=true]{8.0607}{0}{-1}\psplot[algebraic=true]{0}{0}{0}
+            }
+        \pscustom[fillstyle=solid,fillcolor=waterBlue!65,linewidth=0pt]{\listplot[plotstyle=curve,linewidth=2pt,linecolor=waterBlue]{\etaTrue}\psplot[algebraic=true]{8.0607}{0}{-.85}}
+                    \psaxes[ticks=none,labels=none,arrowscale=2,,linewidth=.1pt]{->}(0,0)(0,-1)(8.0607,1.25)
+        \pscustom[fillstyle=solid,fillcolor=seaBed,linewidth=0pt]{\psplot[algebraic=true]{0}{8.0607}{-.85}\psplot[algebraic=true]{8.0607}{0}{-1}\psplot[algebraic=true]{0}{0}{0}}
+        \pscustom[fillstyle=solid,fillcolor=pressureSensor]{\psplot[algebraic=true]{3.5}{4.5}{-.85}\psplot[algebraic=true]{4.5}{3.5}{-.95}\psplot[algebraic=true]{3.5}{3.5}{-.85}}
+        \psline[linewidth=2pt,linecolor=waterBlue](5.3,1)(5.8,1)\uput[r](5.8,1){\textsf{True Surface}}
+        \only<2->{\listplot[plotstyle=curve,linewidth=2pt,linecolor=red,linestyle=dashed]{\hydroApprox}
+        \psline[linewidth=2pt,linecolor=red,linestyle=dashed](5.3,.75)(5.8,.75)\uput[r](5.8,.75){Hydrostatic Approx.}}
+        \only<3->{\listplot[plotstyle=curve,linewidth=2pt,linecolor= black,linestyle=dashed]{\etaKatie}
+                \psline[linewidth=2pt,linecolor=black,linestyle=dashed](5.3,.5)(5.8,.5)\uput[r](5.8,.5){New Formulation}}
+    \end{pspicture}
+\end{center}
+\only<4->{\large{\emC{Can we address these challenges and develop a \emph{time-series} method?}}}
+    
+\end{frame}
+% ==============================================================================================
+

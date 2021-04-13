@@ -1,0 +1,152 @@
+\section{Alternative Formulations}
+
+% ==============================================================================================
+
+\begin{frame}[t]\frametitle{Equations of Motion - %
+    \only<1-2>{Velocity Potential Formulation}%
+    \only<3>{ZCS Formulation}%
+    \only<4->{AFM Formulation}}
+    \begin{overlayarea}{\textwidth}{.56\textheight}
+        \only<1-2>{%
+            We begin by considering an inviscid, irrotational, fluid with a one-dimensional free-surface on the whole-line:
+            \vspace*{-.12in}
+            \begin{align*}
+                &\phi_{xx} + \phi_{zz} =0,  & &(x,z) \in \mathscr{D}, \\ 
+                &\phi_t + \frac{1}{2}\vert\nabla\phi\vert^2 + \frac{\rho g z - p(x,z,t)}{\rho} = 0,& &(x,z) \in \mathscr{D}, \\ 
+                &\phi_z =0, & &z = -h, \\
+                &\eta_t  =\phi_z-\eta_x\phi_x,  &&z = \eta(x,t),\\ 
+                &p =0, && z = \eta(x,t),
+            \end{align*}
+            \vspace*{-.08in}
+            where \(\phi(x,z,t)\) represents the velocity potential of the fluid, \(\eta(x,t)\) represents the surface elevation.
+        }
+        \only<3>{
+            \rcite{Zakharov, and Craig \& Sulem (ZCS)}: \hfill\emA{\(\boxed{q(x,t) = \phi(x, \eta(x,t),t)}\)} \\
+            \vspace*{.1in}
+
+            \emA{{\bf{Dynamic Boundary Condition}}}\\
+            \hspace*{1.5in}\(\displaystyle q_t + \frac{1}{2} q_x^{2}  + g\eta  - \frac{1}{2}\frac{\left( \eta_t  +  \eta_{x}q_x\right)^{2}}{1+\eta_{x}^{2}} = 0, \)\\
+            
+            \vspace*{.1in}
+
+            \emA{{\bf{Kinematic Boundary Condition}}}\\
+            \hspace*{1.5in}\(\displaystyle  \eta_t = \mathcal{G}( \eta)q\),  \hfill\emA{\(\boxed{\mathcal{G}( \eta)q = \normD{\phi}, ~~z =  \eta}\)}\\
+            }
+        \only<4->{
+            \rcite{Ablowitz, Fokas, \& Musslimani (AFM)}: \hfill\emA{\(\boxed{q(x,t) = \phi(x, \eta(x,t),t)}\)}\\
+            \vspace*{.1in}
+
+            \emA{{\bf{Dynamic Boundary Condition/Local Equation}}}\\
+            \hspace*{1.5in}\(\displaystyle q_t + \frac{1}{2} q_x^{2}  + g\eta  - \frac{1}{2}\frac{\left( \eta_t  +  \eta_{x}q_x\right)^{2}}{1+\eta_{x}^{2}} = 0, \)\\
+            
+            \vspace*{.1in}
+
+            \emA{{\bf{Kinematic Boundary Condition/Nonlocal Equation}}}\\
+                \[\wlint{e^{-ikx}\left( \eta_t\cosh(k(\eta+h))+iq_x\sinh(k(\eta+h)) \right)}=0\]
+            }
+    \end{overlayarea}
+    \vspace*{.1in}
+
+    \begin{overlayarea}{\textwidth}{.4\textheight}
+        \drawFigure{
+            \plotAir
+            \expWave
+            \plotBottom
+            \plotPressureSensor
+            \plotAxes{\(x\)}{\(z\)}
+            \uput[r](-.5,0){\(\mathscr{D}\)}
+            \uput[l](-7,-1){\(z = -h\)}
+            \uput[r](1,3){\(z = \eta(x,t)\)}
+            \pause%
+            \uput[u](0,4.25){\emB{\(\boxed{\textsf{\bf Transform to Boundary Variables}}\)}}
+        }
+    \end{overlayarea}
+    
+\end{frame}
+
+
+
+
+
+% % ==============================================================================================
+% \begin{frame}[t]\frametitle{Equations of Motion - %
+%                                                 \only<1>{Velocity Potential Formulation}%
+%                                                 \only<2>{ZCS Formulation}%
+%                                                 \only<3->{AFM Formulation}}
+%     \begin{overlayarea}{\textwidth}{.6\textheight}
+%         \only<1>{
+%            What are the various ways to transform these equations into surface variables?
+%             \begin{align*}
+%                 &\phi_{xx} + \phi_{zz} =0,  & &(x,z) \in \mathscr{D}, \\ 
+%                 &\phi_z =0, & &z = -h, \\
+%                 & \eta_t  =\phi_z- \eta_x\phi_x,  &&z =  \eta(x,t),\\ 
+%                 &\phi_t + \frac{1}{2} \left(\phi_x^2 + \phi_z^2\right) +  g\eta =0, && z =  \eta(x,t),
+%             \end{align*}
+%             where \(\phi(x,z,t)\) represents the velocity potential of the fluid, \(\eta(x,t)\) represents the surface elevation.
+%         }
+%         \only<2>{
+%             \rcite{Zakharov, and Craig \& Sulem (ZCS)}: \hfill\emA{\(\boxed{q(x,t) = \phi(x, \eta(x,t),t)}\)} \\
+%             \vspace*{.1in}
+
+%             \emA{{\bf{Dynamic Boundary Condition}}}\\
+%             \hspace*{1.5in}\(\displaystyle q_t + \frac{1}{2} q_x^{2}  + g\eta  - \frac{1}{2}\frac{\left( \eta_t  +  \eta_{x}q_x\right)^{2}}{1+\eta_{x}^{2}} = 0, \)\\
+            
+%             \vspace*{.1in}
+
+%             \emA{{\bf{Kinematic Boundary Condition}}}\\
+%             \hspace*{1.5in}\(\displaystyle  \eta_t = \mathcal{G}( \eta)q\),  \hfill\emA{\(\boxed{\mathcal{G}( \eta)q = \normD{\phi}, ~~z =  \eta}\)}\\
+%             }
+%         \only<3->{
+%             \rcite{Ablowitz, Fokas, \& Musslimani (AFM)}: \hfill\emA{\(\boxed{q(x,t) = \phi(x, \eta(x,t),t)}\)}\\
+%             \vspace*{.1in}
+
+%             \emA{{\bf{Dynamic Boundary Condition/Local Equation}}}\\
+%             \hspace*{1.5in}\(\displaystyle q_t + \frac{1}{2} q_x^{2}  + g\eta  - \frac{1}{2}\frac{\left( \eta_t  +  \eta_{x}q_x\right)^{2}}{1+\eta_{x}^{2}} = 0, \)\\
+            
+%             \vspace*{.1in}
+
+%             \emA{{\bf{Kinematic Boundary Condition/Nonlocal Equation}}}\\
+%                 \[\wlint{e^{-ikx}\left( \eta_t\cosh(k(\eta+h))+iq_x\sinh(k(\eta+h)) \right)}=0\]
+%             }
+%     \end{overlayarea}
+%     \begin{overlayarea}{\textwidth}{.4\textheight}
+%         \only<1-3>{
+%             \drawFigure{
+%                 \plotAir
+%                 \expWave
+%                 \plotBottom
+%                 \plotPressureSensor
+%                 \plotAxes{\(x\)}{\(z\)}
+%                 \uput[r](-.5,0){\(\mathscr{D}\)}
+%                 \uput[l](-7,-1){\(z = -h\)}
+%                 \uput[r](1,3){\(z = \eta(x,t)\)}
+%             }
+%         }
+%         \only<4->{
+%             \vspace*{-.375in}
+%             \emA{{\bf{A Third Equation}}}\hfill\emA{\(\boxed{Q(x,t) = \phi(x,-h,t)}\)}\\
+%             \hfill \(\displaystyle \wlint{e^{-ikx}\left( \eta_t\sinh(k(\eta+h))-iq_x\cosh(k(\eta+h)) \right)}=k\hat{Q}(k,t)\)\hfill ~\\
+%         }
+        
+%     \end{overlayarea}
+% \end{frame}
+% ==============================================================================================
+\begin{frame}[t]
+    \frametitle{Mapping Pressure via AFM}
+    From the previous slide:\\~\\
+    \emA{{\bf{A Third Equation}}}\hfill\emA{\(\boxed{Q(x,t) = \phi(x,-h,t)}\)}\\
+    \hfill \(\displaystyle \wlint{e^{-ikx}\left( \eta_t\sinh(k(\eta+h))-iq_x\cosh(k(\eta+h)) \right)}=k\hat{Q}(k,t)\)\hfill ~\\
+
+    \pause%
+    {
+        \vspace*{.1in}
+       \begin{center}\(\hat{Q}(k,t) \to Q(x,t) \qquad \emC{\Rightarrow}\qquad \displaystyle Q_t + \frac{1}{2}Q_x^2 + \frac{p(x,-h,t)-\rho g h}{\rho} = 0\) \end{center}
+    }
+    \pause
+    For traveline waves, you can find the following relationships:
+    \[p(\xi,-h) - \rho g h = \rho \iint_{\mathbb{R}\times\mathbb{R}}e^{ik(\xi - \xi')}\sqrt{(c^2 - 2 g \eta)(1 + \eta_x^2)}\cosh(k(\eta + h))\,d\xi'\, dk\]
+    or via a separate derivation
+    \[\int_{-\infty}^{\infty} e^{-i k \xi}\sqrt{c^2 - 2(p - \rho g h)}\cosh(k(\eta + h))\,dk =\frac{\sqrt{c^2 - 2g\eta}}{1 + \eta_\xi^2}\]
+\end{frame}
+% ==============================================================================================
+
