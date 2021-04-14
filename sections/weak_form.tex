@@ -5,12 +5,12 @@
 \begin{frame}[t]\frametitle{Nonlocal/Nonlocal Formulation: The First Integral Relation}
 
 For \emA{\bf any harmonic function \(\varphi(x,z)\)}, we have
-    \[\ooint{\left(\varphi_z\grad\phi - \phi\grad\varphi_z\right)\cdot \vn} = 0,\]
+    \[\ooint{\left(\varphi_z\emC{\grad\phi} - \emC{\phi}\grad\varphi_z\right)\cdot \vn} = 0,\]
     where we assume that \(\phi\) has sufficient decay properties as \(\vert x \vert \to \infty\).\pause 
     ~Using the \emC{\bf kinematic boundary condition,}
-    \[\grad\phi\cdot\vn = \eta_t\quad \rightarrow\quad\sint{\alt<5->{\emA{\varphi_z\eta_t}}{\varphi_z\eta_t}\:dx} = \ooint{\phi\grad\varphi_z\cdot\vn}\]
+    \[\grad\phi\cdot\vn\big\vert_{\mathscr{S}} = \eta_t\quad \rightarrow\quad\sint{\alt<5->{\emA{\varphi_z\eta_t}}{\varphi_z\eta_t}\:dx} = \ooint{\phi\grad\varphi_z\cdot\vn}\]
 \pause 
-Similarly for \(\phi_t\): 
+Similarly for \emC{\(\phi_t\)}: 
     \[\ooint{\left(\varphi_z\emB{\grad\phi_t} - \emB{\phi_t}\grad\varphi_z\right)\cdot \vn} = 0,\]
     \pause 
     Using the \emC{\bf dynamic boundary condition,} along with \(\displaystyle \grad\phi_t\cdot\vn\big\vert_{\mathscr{S}} = \eta_{tt} + \frac{d}{dx}\left[\eta_t\phi_x(x,\eta,t)\right]\)\pause

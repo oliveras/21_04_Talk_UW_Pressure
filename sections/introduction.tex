@@ -10,22 +10,27 @@
         \expWave
         \plotBottom
         \plotPressureSensor
-        \only<1>{
+        \only<1-2>{
             \uput[l](-2,-7){\textcolor{sgreen}{\Large \bf Given pressure}}
-            \uput[r](3,7){\textcolor{sblue}{\Large\bf Reconstruct the wave}}
+            \psline[arrows=->,linecolor=sgreen,linewidth=3pt](-2,-7)(0,-2)
+            \pause \uput[r](3,7){\textcolor{sblue}{\Large\bf Reconstruct the wave}}
+            \psline[arrows=->,linecolor=sblue,linewidth=3pt](3,7)(1,2.1)
+    
         }
-        \only<2>{
+        \only<4-5>{
             \uput[l](-2,-7){\textcolor{sgreen}{\Large \bf Given: \(p(x-ct)\)}}
-            \uput[r](3,7){\textcolor{sblue}{\Large\bf Found: \(\eta(x-ct)\)}}
-        }
+            \psline[arrows=->,linecolor=sgreen,linewidth=3pt](-2,-7)(0,-2)
+            \only<5->{
+                \uput[r](3,7){\textcolor{sblue}{\Large\bf Found: \(\eta(x-ct)\)}}        
+                \psline[arrows=->,linecolor=sblue,linewidth=3pt](3,7)(1,2.1)
+            }
 
-        \psline[arrows=->,linecolor=sgreen,linewidth=3pt](-2,-7)(0,-2)
-        \psline[arrows=->,linecolor=sblue,linewidth=3pt](3,7)(1,2.1)
+        }
 
     }
-    \vspace*{.75in}
-    \only<2>{
-        {\Large\emA{\bf Joint work: Deconinck, Henderson, Oliveras, Vasan} }
+    \vspace*{1in}
+    \only<3->{
+        {\large\emC{\bf Joint work: Deconinck, Henderson, Oliveras, Vasan} }
     }
 \end{frame}
 % ==============================================================================================
@@ -52,8 +57,23 @@
                 \psline[linewidth=2pt,linecolor=black,linestyle=dashed](5.3,.5)(5.8,.5)\uput[r](5.8,.5){New Formulation}}
     \end{pspicture}
 \end{center}
-\only<4->{\large{\emC{Can we address these challenges and develop a \emph{time-series} method?}}}
+\only<4->{\large{\emA{\bf Can we address these challenges and develop a \emph{time-series} method?}}}
     
 \end{frame}
 % ==============================================================================================
 
+% ==============================================================================================
+\begin{frame}[t]\frametitle{Motivation / Problem Description}
+    \vfill
+    \drawFigure{
+        \plotAir
+        \expWave
+        \plotBottom
+        \plotPressureSensor
+        \uput[l](-2,-7){\textcolor{sgreen}{\Large \bf Given \(p(x_i,t)\)}}
+        \psline[arrows=->,linecolor=sgreen,linewidth=3pt](-2,-7)(0,-2)
+        \pause \uput[r](3,7){\textcolor{sblue}{\Large\bf Find \(\eta(x_i,t\)}}
+        \psline[arrows=->,linecolor=sblue,linewidth=3pt](3,7)(1,2.1)
+    }
+\end{frame}
+% ==============================================================================================
