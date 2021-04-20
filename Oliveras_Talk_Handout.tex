@@ -1,0 +1,39 @@
+\documentclass[10pt, aspectratio=169,compress,shadow,handout]{beamer}
+%%\$(.*?)\$   \($1\)
+\input{common/header.tex}
+
+\input{common/color_definitions.tex}
+\input{common/ps_trick_info.tex}
+\input{common/math_shortcuts.tex}
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% Title information
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+\title{Reconstructing the Free-Surface from Pressure}
+\subtitle{Time-Dependent Relationships and Experimental Comparisons}
+\author[K. Oliveras (Seattle University)]{Katie Oliveras\\ Joint with R Keller and G Greenstein}
+\institute[Seattle University]{Seattle University | Department of Mathematics}
+\date{13 April 2021 - UW NLW Group}
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\begin{document}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+% Title Page 
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\frame[t]{
+\titlepage
+}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+% Sections
+
+\input{sections/introduction.tex}
+\input{sections/previous_formulations.tex}
+\input{sections/weak_form.tex}
+\input{sections/asymptotic_models.tex}
+\input{sections/implementation.tex}
+
+\input{sections/concluding_remarks.tex}
+\end{document}
